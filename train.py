@@ -13,17 +13,6 @@ from azureml.data.dataset_factory import TabularDatasetFactory
 # TODO: Create TabularDataset using TabularDatasetFactory
 # Data is located at:
 # "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv"
-dset = TabularDatasetFactory.from_delimited_files (path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv" )
-
-x, y = clean_data(dset)
-
-# TODO: Split data into train and test sets.
-
-### YOUR CODE HERE ###a
-
-x_train,x_test,y_train,y_test = train_test_split (x,y,test_size = 0.33, random_state =100)
-
-run = Run.get_context()
 
 def clean_data(data):
     # Dict for cleaning data
@@ -50,6 +39,19 @@ def clean_data(data):
     x_df["poutcome"] = x_df.poutcome.apply(lambda s: 1 if s == "success" else 0)
 
     y_df = x_df.pop("y").apply(lambda s: 1 if s == "yes" else 0)
+
+    return x_df, y_df
+
+dset = TabularDatasetFactory.from_delimited_files (path = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv" )
+x, y = clean_data(dset)
+
+# TODO: Split data into train and test sets.
+
+### YOUR CODE HERE ###a
+
+x_train,x_test,y_train,y_test = train_test_split (x,y,test_size = 0.33, random_state =100)
+
+run = Run.get_context()
     
 
 def main():
@@ -64,10 +66,16 @@ def main():
     run.log("Regularization Strength:", np.float(args.C))
     run.log("Max iterations:", np.int(args.max_iter))
 
+    
+
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
     accuracy = model.score(x_test, y_test)
     run.log("Accuracy", np.float(accuracy))
+    
+    os.makedirs ('./outputs',exist_ok = True)
+    joblib.dump(model,'./outputs/model.joblibs')
+    
 
 if __name__ == '__main__':
     main()
