@@ -15,6 +15,20 @@ Using the Hyperdrive and logistic regression algorithm, 91.28% accuracy was achi
 ## Scikit-learn Pipeline
 **Explain the pipeline architecture, including data, hyperparameter tuning, and classification algorithm.**
 
+There were 2 files that was used in hyperdrive with logistic regression steps. Train.py file was used to clean and prepare the data. 
+Following steps were involved the the pipeline.
+
+1. First I have created the TabularDataset using TabularDatasetFactory using the link https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/bankmarketing_train.csv
+
+2. Cleaning the data was the second step where all the missing entried were removed and other feature engineering steps were taken
+
+3. The data gathered was then split into train and test sets
+
+4. Training the logistic regression model using arguments from the HyperDrive runs.
+
+5. Accuracy was calculated 
+
+
 **What are the benefits of the parameter sampler you chose?**
 
 **What are the benefits of the early stopping policy you chose?**
