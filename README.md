@@ -55,6 +55,13 @@ The differnce between accuracies can be explained by the fact that AutoML runs m
 ## Future work
 **What are some areas of improvement for future experiments? Why might these improvements help the model?**
 
+There are certain improvements that can be done for future experiments :
+1. The dataset  classes can be made balanced in terms of positive and negative instances
+2. Other methods of sampling should be used instead of the  random sampling
+3. Different primary metrics can be tested instead of Accuracy . Though mostly accuracy can be enough but its not always the correct measure for performance
+4. AutoML run time can be extended to try different algorithms
+
+
 ## Proof of cluster clean up
 **If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
 **Image of cluster marked for deletion**
