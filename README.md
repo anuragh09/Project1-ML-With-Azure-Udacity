@@ -65,3 +65,5 @@ There are certain improvements that can be done for future experiments :
 ## Proof of cluster clean up
 **If you did not delete your compute cluster in the code, please complete this section. Otherwise, delete this section.**
 **Image of cluster marked for deletion**
+
+[![Capture-deletion-project1.png](https://i.postimg.cc/3xQYpCXw/Capture-deletion-project1.png)](https://postimg.cc/Mv5CJBrk)
