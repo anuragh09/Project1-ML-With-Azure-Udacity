@@ -46,6 +46,16 @@ Bandit policy is based on slack factor/slack amount and evaluation interval. Ban
 The AutoML was given input such as task, exp. timeout, compute target and primary metric etc. These parameters were used in AutoML config which was run my optimized AutoML hyperdrive to get the best performing algorithm. The timeout for exp. was set to 30 min as it helps save the compute resources and cost of operation.
 After running the AutoML Voting Ensemble provided the highest accuracy result for the given dataset. 
 
+Following six algorithms were part of voting Ensemble and their weights are given:
+
+"ensembled_iterations": '[1 0 14 11 15 5]',
+
+"ensembled_algorithms": "['XGBoostClassifier', 'LightGBM', 'XGBoostClassifier', 'XGBoostClassifier', 'LightGBM', 'RandomForrest']",
+
+"ensemble_weights": "[0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667"
+
+Few other hyparameters that were generated includes "n_estimators", "random_state" and "learning_rate".
+
 [![screenshot1.png](https://i.postimg.cc/NMDjkGz2/screenshot1.png)](https://postimg.cc/wytz6zH9)
 
 ## Pipeline comparison
