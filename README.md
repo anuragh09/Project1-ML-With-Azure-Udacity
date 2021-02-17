@@ -48,11 +48,11 @@ After running the AutoML Voting Ensemble provided the highest accuracy result fo
 
 Following six algorithms were part of voting Ensemble and their weights are given:
 
-"ensembled_iterations": '[1 0 14 11 15 5]',
+"ensembled_iterations": "[1 0 14 11 15 5]",
 
 "ensembled_algorithms": "['XGBoostClassifier', 'LightGBM', 'XGBoostClassifier', 'XGBoostClassifier', 'LightGBM', 'RandomForrest']",
 
-"ensemble_weights": "[0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667"
+"ensemble_weights": "[0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667, 0.16666666666666667]"
 
 Few other hyparameters that were generated includes "n_estimators", "random_state" and "learning_rate".
 
